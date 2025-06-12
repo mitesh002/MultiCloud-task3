@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Multi-Cloud Demo (AWS + GCP)</h2>
+    <button onclick="callAPI()">Call GCP API</button>
+    <p id="response"></p>
+
+    <script>
+      async function callAPI() {
+        const res = await fetch('https://asia-south1-root-dispatch-458612-b2.cloudfunctions.net/hello_world');
+        const data = await res.text();
+        document.getElementById('response').innerText = data;
+      }
+    </script>
+  </body>
+</html>
